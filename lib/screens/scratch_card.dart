@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scratcher/scratcher.dart';
@@ -46,11 +47,15 @@ class ScratchCardScreen extends StatelessWidget {
               color: Colors.deepPurple.shade100,
               onChange: (value) {
                 // Progress value of scratching
-                print('Scratch progress: $value%');
+                if (kDebugMode) {
+                  print('Scratch progress: $value%');
+                }
               },
               onThreshold: () {
                 // Action to take when scratching threshold is met
-                print('Revealed!');
+                if (kDebugMode) {
+                  print('Revealed!');
+                }
               },
               child: Container(
                 height: 400,

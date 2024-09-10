@@ -1,7 +1,5 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:white_matrix_ecommerce/firebase_options.dart';
 import 'package:white_matrix_ecommerce/helpers/cart_provider.dart';
 import 'package:white_matrix_ecommerce/helpers/routes.dart';
 import 'package:white_matrix_ecommerce/screens/splash.dart';
@@ -9,9 +7,7 @@ import 'package:white_matrix_ecommerce/utils/theme/theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => CartProvider()),
